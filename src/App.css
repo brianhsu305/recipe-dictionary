@@ -1,7 +1,7 @@
 .App {
 	font-family: "Poppins", sans-serif;
 	background: rgb(59, 102, 104);
-	padding: 1em;
+	padding: 0 1em;
 	display: flex;
 	flex-direction: column;
 }
