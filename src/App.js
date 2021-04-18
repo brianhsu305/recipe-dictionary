@@ -38,7 +38,7 @@ const App = () => {
         <div className="App">
             <h1 className="title">Recipe Dictionary</h1>
             <form onSubmit={getSearch} className="search-form">
-                <input type="text" className="search-bar" value={search} onChange = {updateSearch} placeholder="What do you want to cook today?"/>
+                <input type="text" className="search-bar" value={search} onChange = {updateSearch} placeholder="What's cooking?"/>
                 <button className="search-button" type="submit"> Search</button>
             </form>
             <div className="recipes">
@@ -50,6 +50,7 @@ const App = () => {
                         image={recipe.recipe.image}
                         ingredients={recipe.recipe.ingredients}
                     />
+
                 ))}
             </div>
         </div>
