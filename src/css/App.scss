@@ -1,0 +1,145 @@
+:root {
+    --accent-color:#c3f7c3;
+    --second-color: #448644;
+}
+
+body {
+    padding: 1em;
+    font-family: 'Poppins', sans-serif;
+    background: var(--accent-color);
+}
+
+
+.title, .search-form {
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    margin-bottom: 5em;
+    input {
+        flex: 2;
+        padding: 1em;
+        border-radius: 10px 0 0 10px;
+        box-shadow: 10px 10px 2em rgb(197, 197, 197);
+        border: none;
+
+    }
+    button {
+        width: auto;
+        padding: 1em;
+        background-color: var(--second-color);
+        border: none;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 10px 10px 2em rgb(197, 197, 197);
+        color: white;
+        outline: none;
+        cursor: pointer;
+
+    }
+    
+}
+
+.recipes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1em;
+}
+
+.recipe {
+    margin: 1em;
+    padding: 1em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 10px 10px 2em rgb(197, 197, 197);
+    background-color: white;
+    width: 100%;
+    cursor: pointer;
+    img {
+        border-radius: 1em;
+        width: 100%;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: auto;
+    }
+    &:hover {
+        transform: perspective(500px) translateZ(40px);
+    }
+}
+
+.recipedetail {
+    margin: 1em;
+    padding: 1em;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 10px 10px 2em rgb(197, 197, 197);
+    background-color: white;
+
+    button {
+        text-transform: uppercase;
+        background-color: var(--second-color);
+        border: none;
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        color: white;
+    }
+    img {
+        border-radius: 1em;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 940px) {
+    .title {
+        text-align: left;
+        padding-left: 1.5em;
+    }
+    .search-form {
+        padding: 0 3em;
+    }
+    .recipe {
+        width: auto;
+        img {
+            width: auto;
+        }
+    }
+    .recipedetail {
+        width: 100%;
+        .info {
+            display: flex;
+            align-items: center;
+            img {
+                width: auto;
+            }
+            ol {
+                padding-left:2em;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1300px) {
+    .recipedetail {
+        position: relative;
+
+        button {
+            position: absolute;
+            top: 2em;
+            left: 2em;
+        }
+        .container, .info {
+            padding: 0 10em;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    
+}

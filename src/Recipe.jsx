@@ -1,29 +1,27 @@
 import React, { useState } from 'react';
 
-const Recipe = ({title, image, calories, ingredients}) => {
+const Recipe = (props) => {
 
     const [reveal, setReveal] = useState(false);
 
     const handleClick = () => {
         setReveal(!reveal);
-        console.log(reveal);
     }
-
+    
     if (reveal) {
         return (
-            <div className="recipeDetail">
-                <button className="minimize" onClick={handleClick}>minimize</button>
+            <div className="recipedetail">
+                <button onClick={handleClick}><i className="fas fa-times"></i></button>
                 <div className="container">
-                    <div className="left">
-                        <h1 className="detailtitle">{title}</h1>
-                        <img src={image} alt="dish image" className="detailimage"/>
-                        <p>{calories.toFixed(0)} cal</p>
-                    </div>
-                    
+                    <h1>{props.title}</h1>
+                    <p>{props.calories.toFixed(0)} cal</p>
+                </div>
+                <div className="info">
+                    <img src={props.image} alt="dish" className="detailimage"/>
                     <ol>
-                        {ingredients.map((ingredient, index) => (
-                            <li key={index}>{ingredient.text}</li>
-                        ))}
+                    {props.ingredients.map((ingredient, index) => (
+                        <li key={index}>{ingredient.text}</li>
+                    ))}
                     </ol>
                 </div>
             </div>
@@ -31,8 +29,8 @@ const Recipe = ({title, image, calories, ingredients}) => {
     } 
     return (
        <button className="recipe" onClick={handleClick}>
-            <img className="recipeimage" src={image} alt="dish image"/>
-            <p className="recipetitle">{title}</p>            
+            <img src={props.image} alt="dish"/>
+            <p>{props.title}</p>            
        </button> 
     );
 }
