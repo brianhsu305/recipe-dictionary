@@ -27,7 +27,7 @@ const App = () => {
         }
         return true;
     };
-
+    
     const noresults = (recipes) => {
         if (recipes.length === 0 && query.length !== 0) {
             return true;

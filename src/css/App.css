@@ -63,7 +63,7 @@ body {
 }
 
 .intro .foodimg {
-  width: 50vw;
+  width: 10em;
   height: auto;
 }
 
@@ -140,6 +140,11 @@ body {
   position: absolute;
   top: 1em;
   right: 1em;
+  cursor: pointer;
+}
+
+.recipedetail button i {
+  text-align: center;
 }
 
 .recipedetail img {
@@ -156,11 +161,10 @@ body {
     padding: 0 3em;
   }
   .intro {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     margin-top: 5em;
+  }
+  .intro .foodimg {
+    width: 25em;
   }
   .recipe {
     width: auto;
