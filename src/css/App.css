@@ -1,10 +1,12 @@
 :root {
-  --accent-color:#c3f7c3;
-  --second-color: #448644;
+  --accent-color:#102c4d;
+  --second-color: #e25959;
 }
 
 body {
-  padding: 1em;
+  padding: 1em 1em 0 1em;
+  margin: 0;
+  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   background: var(--accent-color);
 }
@@ -13,11 +15,15 @@ body {
   text-align: center;
 }
 
+.title, .sorry {
+  color: white;
+}
+
 .search-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 5em;
+  margin-bottom: 1em;
 }
 
 .search-form input {
@@ -26,8 +32,6 @@ body {
           flex: 2;
   padding: 1em;
   border-radius: 10px 0 0 10px;
-  -webkit-box-shadow: 10px 10px 2em #c5c5c5;
-          box-shadow: 10px 10px 2em #c5c5c5;
   border: none;
 }
 
@@ -37,11 +41,39 @@ body {
   background-color: var(--second-color);
   border: none;
   border-radius: 0 10px 10px 0;
-  -webkit-box-shadow: 10px 10px 2em #c5c5c5;
-          box-shadow: 10px 10px 2em #c5c5c5;
   color: white;
   outline: none;
   cursor: pointer;
+}
+
+.intro {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: ease fadein 2s;
+          animation: ease fadein 2s;
+}
+
+.intro .foodimg {
+  width: 50vw;
+  height: auto;
+}
+
+.intro .introtext {
+  margin-top: 2em;
+}
+
+.intro p {
+  text-align: center;
+  color: white;
 }
 
 .recipes {
@@ -56,16 +88,17 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 1em;
+}
+
+.sorry {
+  text-align: center;
 }
 
 .recipe {
-  margin: 1em;
-  padding: 1em;
+  margin: 1em 0;
+  padding: 2em;
   border: none;
   border-radius: 2em;
-  -webkit-box-shadow: 10px 10px 2em #c5c5c5;
-          box-shadow: 10px 10px 2em #c5c5c5;
   background-color: white;
   width: 100%;
   cursor: pointer;
@@ -88,23 +121,25 @@ body {
 }
 
 .recipedetail {
-  margin: 1em;
+  margin: 1em 0;
   padding: 1em;
   border: none;
   border-radius: 2em;
-  -webkit-box-shadow: 10px 10px 2em #c5c5c5;
-          box-shadow: 10px 10px 2em #c5c5c5;
   background-color: white;
+  position: relative;
 }
 
 .recipedetail button {
-  text-transform: uppercase;
-  background-color: var(--second-color);
+  background-color: gray;
   border: none;
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   color: white;
+  font-size: 1rem;
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }
 
 .recipedetail img {
@@ -112,7 +147,7 @@ body {
   width: 100%;
 }
 
-@media only screen and (min-width: 940px) {
+@media only screen and (min-width: 700px) {
   .title {
     text-align: left;
     padding-left: 1.5em;
@@ -120,14 +155,23 @@ body {
   .search-form {
     padding: 0 3em;
   }
+  .intro {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 5em;
+  }
   .recipe {
     width: auto;
+    margin: 1em;
   }
   .recipe img {
     width: auto;
   }
   .recipedetail {
     width: 100%;
+    margin: 1em;
   }
   .recipedetail .info {
     display: -webkit-box;
@@ -147,18 +191,32 @@ body {
 
 @media only screen and (min-width: 1300px) {
   .recipedetail {
-    position: relative;
-  }
-  .recipedetail button {
-    position: absolute;
-    top: 2em;
-    left: 2em;
-  }
-  .recipedetail .container, .recipedetail .info {
-    padding: 0 10em;
+    margin: 1em 20em;
   }
   .recipedetail h1 {
     font-size: 2rem;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=App.css.map */

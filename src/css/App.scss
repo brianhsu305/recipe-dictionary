@@ -1,10 +1,12 @@
 :root {
-    --accent-color:#c3f7c3;
-    --second-color: #448644;
+    --accent-color:#102c4d;
+    --second-color: #e25959;
 }
 
 body {
-    padding: 1em;
+    padding: 1em 1em 0 1em;
+    margin: 0;
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     background: var(--accent-color);
 }
@@ -14,14 +16,17 @@ body {
     text-align: center;
 }
 
+.title, .sorry {
+   color: white;
+}
+
 .search-form {
     display: flex;
-    margin-bottom: 5em;
+    margin-bottom: 1em;
     input {
         flex: 2;
         padding: 1em;
         border-radius: 10px 0 0 10px;
-        box-shadow: 10px 10px 2em rgb(197, 197, 197);
         border: none;
 
     }
@@ -31,11 +36,29 @@ body {
         background-color: var(--second-color);
         border: none;
         border-radius: 0 10px 10px 0;
-        box-shadow: 10px 10px 2em rgb(197, 197, 197);
         color: white;
         outline: none;
         cursor: pointer;
+    }
+    
+}
 
+.intro {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: ease fadein 2s;
+    .foodimg {
+        width: 50vw;
+        height: auto;
+    }
+    .introtext {
+        margin-top: 2em;
+    }
+    p {
+        text-align: center;
+        color: white;
     }
     
 }
@@ -45,18 +68,20 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 1em;
 }
 
+.sorry {
+    text-align: center;
+}
 .recipe {
-    margin: 1em;
-    padding: 1em;
+    margin: 1em 0;
+    padding: 2em;
     border: none;
     border-radius: 2em;
-    box-shadow: 10px 10px 2em rgb(197, 197, 197);
     background-color: white;
     width: 100%;
     cursor: pointer;
+
     img {
         border-radius: 1em;
         width: 100%;
@@ -73,21 +98,23 @@ body {
 }
 
 .recipedetail {
-    margin: 1em;
+    margin: 1em 0;
     padding: 1em;
     border: none;
     border-radius: 2em;
-    box-shadow: 10px 10px 2em rgb(197, 197, 197);
     background-color: white;
-
+    position: relative;
     button {
-        text-transform: uppercase;
-        background-color: var(--second-color);
+        background-color: gray;
         border: none;
-        width: 3em;
-        height: 3em;
+        width: 2em;
+        height: 2em;
         border-radius: 50%;
         color: white;
+        font-size: 1rem;
+        position: absolute;
+        top: 1em;
+        right: 1em;
     }
     img {
         border-radius: 1em;
@@ -95,7 +122,7 @@ body {
     }
 }
 
-@media only screen and (min-width: 940px) {
+@media only screen and (min-width: 700px) {
     .title {
         text-align: left;
         padding-left: 1.5em;
@@ -103,14 +130,20 @@ body {
     .search-form {
         padding: 0 3em;
     }
+    .intro {
+        flex-direction: row;
+        margin-top: 5em;
+    }
     .recipe {
         width: auto;
+        margin: 1em;
         img {
             width: auto;
         }
     }
     .recipedetail {
         width: 100%;
+        margin: 1em;
         .info {
             display: flex;
             align-items: center;
@@ -127,19 +160,24 @@ body {
 
 @media only screen and (min-width: 1300px) {
     .recipedetail {
-        position: relative;
+        margin: 1em 20em;
 
-        button {
-            position: absolute;
-            top: 2em;
-            left: 2em;
-        }
-        .container, .info {
-            padding: 0 10em;
-        }
         h1 {
             font-size: 2rem;
         }
     }
     
 }
+
+
+//Animation
+@keyframes fadein {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
