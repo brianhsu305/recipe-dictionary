@@ -1,38 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Recipe = (props) => {
-
-    const [reveal, setReveal] = useState(false);
-
-    const handleClick = () => {
-        setReveal(!reveal);
+    const convertUri = (uri) => {
+        return (encodeURIComponent(uri))
     }
-    
-    if (reveal) {
-        return (
-            <div className="recipedetail">
-                <button onClick={handleClick}><i className="fas fa-times"></i></button>
-                <div className="container">
-                    <h1>{props.title}</h1>
-                    <p>{props.calories.toFixed(0)} cal</p>
-                </div>
-                <div className="info">
-                    <img src={props.image} alt="dish" className="detailimage"/>
-                    <ol>
-                    {props.ingredients.map((ingredient, index) => (
-                        <li key={index}>{ingredient.text}</li>
-                    ))}
-                    </ol>
-                </div>
-            </div>
-        )
-    } 
     return (
-       <button className="recipe" onClick={handleClick}>
-            <img src={props.image} alt="dish"/>
-            <p>{props.title}</p>            
-       </button> 
-    );
+        <div className="recipe">
+            <img src={props.dish.image} alt="dish"/>
+            <div className="content">
+                <div className="info">
+                    <p className="recipe-label">{props.dish.label}</p>
+                    <p className="recipe-calories">{props.dish.calories.toFixed(0)} cal</p>
+                </div>
+
+
+                <Link className="btn" to={`/recipe/${convertUri(props.dish.uri)}`}>
+                    <i className="fas fa-arrow-right"></i>
+                </Link>
+            </div>
+        </div>
+    )
+
 }
 
 export default Recipe;

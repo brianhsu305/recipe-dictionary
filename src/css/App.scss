@@ -1,193 +1,86 @@
-:root {
-    --accent-color:#102c4d;
-    --second-color: #e25959;
-}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap");
 
 body {
-    padding: 1em 1em 0 1em;
-    margin: 0;
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    background: var(--accent-color);
+	padding: 0;
+	margin: 0;
+	min-height: 100vh;
+	font-family: "Poppins", sans-serif;
 }
 
-
-.title, .search-form {
-    text-align: center;
+.title {
+	font-family: "Playfair Display SC", sans-serif;
+	font-size: 1rem;
+	text-align: center;
 }
 
-.title, .sorry {
-   color: white;
+.home {
+	padding: 0 1em;
+
+	form {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 2px solid black;
+		height: 3em;
+		margin: 1em;
+
+		button,
+		input {
+			background: none;
+			border: none;
+			font-size: 1rem;
+		}
+
+		input {
+			width: 100%;
+		}
+	}
 }
-
-.search-form {
-    display: flex;
-    margin-bottom: 1em;
-    input {
-        flex: 2;
-        padding: 1em;
-        border-radius: 10px 0 0 10px;
-        border: none;
-
-    }
-    button {
-        width: auto;
-        padding: 1em;
-        background-color: var(--second-color);
-        border: none;
-        border-radius: 0 10px 10px 0;
-        color: white;
-        outline: none;
-        cursor: pointer;
-    }
-    
-}
-
-.intro {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: ease fadein 2s;
-    .foodimg {
-        width: 10em;
-        height: auto;
-    }
-    .introtext {
-        margin-top: 2em;
-    }
-    p {
-        text-align: center;
-        color: white;
-    }
-    
+.section-title {
+	margin-top: 2em;
 }
 
 .recipes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.sorry {
-    text-align: center;
-}
 .recipe {
+	width: 10rem;
     margin: 1em 0;
-    padding: 2em;
-    border: none;
-    border-radius: 2em;
-    background-color: white;
-    width: 100%;
-    cursor: pointer;
+	border-radius: 1em;
+	box-shadow: 0 0 1em rgb(210, 210, 210);
 
-    img {
-        border-radius: 1em;
-        width: 100%;
-    }
 
-    p {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: auto;
-    }
-    &:hover {
-        transform: perspective(500px) translateZ(40px);
-    }
+	img {
+		border-radius: 1em;
+		width: 100%;
+	}
+	p {
+		margin: 0;
+		font-size: 0.8rem;
+	}
+	.content {
+		display: grid;
+		grid-template-columns: 70% auto;
+		padding: .5em;
+	}
+
+
+	.recipe-calories {
+		color: #747474;
+	}
+
+	.btn {
+		background: #f6851d;
+		justify-self: end;
+		align-self: center;
+		color: white;
+		display: grid;
+		place-content: center;
+		text-decoration: none;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+	}
 }
-
-.recipedetail {
-    margin: 1em 0;
-    padding: 1em;
-    border: none;
-    border-radius: 2em;
-    background-color: white;
-    position: relative;
-
-    button {
-        background: none;
-        border: none;
-        width: 2em;
-        height: 2em;
-        color: black;
-        font-size: 1rem;
-        position: absolute;
-        top: 1em;
-        right: 1em;
-        cursor: pointer;
-
-        i {
-            text-align: center;
-
-        }
-    }
-
-    img {
-        border-radius: 1em;
-        width: 100%;
-    }
-}
-
-@media only screen and (min-width: 700px) {
-    .title {
-        text-align: left;
-        padding-left: 1.5em;
-    }
-    .search-form {
-        padding: 0 3em;
-    }
-    .intro {
-        margin-top: 5em;
-
-        .foodimg {
-            width: 25em;
-        }
-    }
-    .recipe {
-        width: auto;
-        margin: 1em;
-        img {
-            width: auto;
-        }
-    }
-    .recipedetail {
-        width: 100%;
-        margin: 1em;
-        .info {
-            display: flex;
-            align-items: center;
-            img {
-                width: auto;
-            }
-            ol {
-                padding-left:2em;
-            }
-        }
-    }
-}
-
-
-@media only screen and (min-width: 1300px) {
-    .recipedetail {
-        margin: 1em 20em;
-
-        h1 {
-            font-size: 2rem;
-        }
-    }
-    
-}
-
-
-//Animation
-@keyframes fadein {
-    from {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
