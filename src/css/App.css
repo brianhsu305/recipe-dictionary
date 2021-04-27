@@ -7,10 +7,15 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .title {
   font-family: "Playfair Display SC", sans-serif;
   font-size: 1rem;
   text-align: center;
+  color: black;
 }
 
 .home {
