@@ -38,16 +38,16 @@ const RecipeDetails = (props) => {
                                 <h1>{result.label}</h1>
                                 <p>{result.mealType}</p>
                             </div>
-                            
                         </div>
-                        <img src={result.image} alt=""/>
+                        <img src={result.image} alt="dish"/>
+                        <div className="specs">
+                            <p><span className="highlight">{result.ingredients.length}</span>{" "}Ingredients</p>
+                            <p><span className="highlight">{result.calories.toFixed(0)}</span>{" "}Calories</p>
+                            <p><span className="highlight">{result.totalTime!==0 ? result.totalTime : "?"}</span>{" "}Minutes</p>
+                        </div>
                     </div>
                     
-					<div className="specs">
-                        <p><span className="highlight">{result.ingredients.length}</span>{" "}Ingredients</p>
-                        <p><span className="highlight">{result.calories.toFixed(0)}</span>{" "}Calories</p>
-                        <p><span className="highlight">{result.totalTime!==0 ? result.totalTime : "?"}</span>{" "}Minutes</p>
-                    </div>
+					
 					
                     <div className="ingredients">
                         <div className="ingre-title">
