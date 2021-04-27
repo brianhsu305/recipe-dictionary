@@ -100,4 +100,119 @@ body {
   height: 2rem;
   border-radius: 50%;
 }
+
+.recipe-details .top {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.recipe-details .top .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.recipe-details .top .left .btn {
+  background: #f6851d;
+  color: white;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.recipe-details .top .left .recipe-title h1, .recipe-details .top .left .recipe-title p {
+  margin: 0;
+}
+
+.recipe-details .top .left .recipe-title h1 {
+  font-size: 1rem;
+}
+
+.recipe-details .top .left .recipe-title p {
+  color: #747474;
+}
+
+.recipe-details .top img {
+  width: 10rem;
+  border-radius: 1em;
+}
+
+.recipe-details .highlight {
+  font-size: 1.2rem;
+  color: #f6851d;
+}
+
+.recipe-details .specs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1em;
+}
+
+.recipe-details .ingredients .ingre-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1em;
+}
+
+.recipe-details .ingredients .ingre-title p:nth-child(1) {
+  font-size: 1.2rem;
+}
+
+.recipe-details .ingredients .ingre-title p:nth-child(2) {
+  color: #747474;
+}
+
+.recipe-details .ingredients ol {
+  list-style: none;
+  padding: 0 1em;
+}
+
+.recipe-details .ingredients ol li {
+  padding: .5em;
+}
+
+.recipe-details button {
+  background-color: #f6851d;
+  border: none;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.recipe-details button a {
+  color: white;
+  text-decoration: none;
+}
 /*# sourceMappingURL=App.css.map */

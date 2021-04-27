@@ -16,7 +16,7 @@ const Home = () => {
 	//run whenever the item in array changes
 	useEffect(() => {
 		fetch(
-			`/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+			`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
 		)
 			.then((res) => res.json())
 			.then((data) => {
@@ -57,17 +57,17 @@ const Home = () => {
 				Recommendations
 			</p>
 			<div className="recipes">
-				{recipes ? (
+				{recipes === undefined || Object.keys(recipes) === 0 ? 
+				(
+					<div>Loading...</div>
+					
+				) : (
 					recipes.map((dish) => (
 						<Recipe
 							key={dish.recipe.url}
 							dish={dish.recipe}
 						/>
 					))
-				) : (
-					<div>
-                        <p>Loading...</p>
-                    </div>
 				)}
 			</div>
 		</div>
