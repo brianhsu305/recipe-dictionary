@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div>
-            <a href="/"><h1 className="title">Recipe Dictionary</h1></a>
+        <div className="container justfiy-content-center">
+            <div className="row">
+                <Link to="/" className="title text-center text-dark my-1">Recipe Dictionary</Link>
+            </div>
         </div>
     )
 }

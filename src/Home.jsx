@@ -36,7 +36,7 @@ const Home = () => {
 	};
 
 	return (
-		<div className="home">
+		<div className="home container">
 			<form
 				onSubmit={getSearch}
 				className="search"
@@ -53,10 +53,10 @@ const Home = () => {
 				</button>
 			</form>
 
-			<p className="section-title">
+			<p className="fw-bold my-2 section-title">
 				Recommendations
 			</p>
-			<div className="recipes">
+			<div className="d-flex justify-content-between flex-wrap">
 				{recipes === undefined || Object.keys(recipes) === 0 ? 
 				(
 					<div>Loading...</div>
