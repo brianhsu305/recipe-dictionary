@@ -24,14 +24,14 @@ const RecipeDetails = (props) => {
 
 
 	return (
-		<div className="recipe-details">
+		<div className="recipe-details container">
 			{result === undefined || Object.keys(result).length === 0  ? (
                 <div>Loading ...</div>
 			) : (
 				<div>
                     <section className="d-flex justify-content-between">
                         <div className="left align-items-between">
-                            <img className="mb-3" src={result.image} alt="dish"/>
+                            <img className="mb-3 w-50" src={result.image} alt="dish"/>
                             <h3>{result.label}</h3>
                             <p>{result.mealType}</p>
                         </div>
@@ -42,7 +42,7 @@ const RecipeDetails = (props) => {
                                 <p><span className="highlight">{result.totalTime!==0 ? result.totalTime : "?"}</span>{" "}Minutes</p>
                             </div>
                         </div>
-                        <Link className="btn btn-lg" to="/">
+                        <Link className="btn btn-lg" to={`/`}>
                             <i className="fas fa-reply"></i>
                         </Link>
                     </section>

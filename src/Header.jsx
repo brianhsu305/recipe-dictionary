@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className="container justfiy-content-center">
+        <div className="container">
             <div className="row">
                 <Link to="/" className="title text-center text-dark my-1">Recipe Dictionary</Link>
             </div>

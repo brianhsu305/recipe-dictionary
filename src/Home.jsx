@@ -11,18 +11,31 @@ const Home = () => {
 
 	const [recipes, setRecipes] = useState([]);
 	const [search, setSearch] = useState("");
-	const [query, setQuety] = useState("chicken");
+	const [query, setQuety] = useState("");
 
 	//run whenever the item in array changes
 	useEffect(() => {
-		fetch(
-			`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-		)
-			.then((res) => res.json())
-			.then((data) => {
-				setRecipes(data.hits);
-				console.log(data.hits);
-			});
+		if (query.length === 0) {
+			fetch(
+				`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`
+			)
+				.then((res) => res.json())
+				.then((data) => {
+					setRecipes(data.hits);
+					console.log(data.hits);
+				});
+		}
+		else {
+			fetch(
+				`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+			)
+				.then((res) => res.json())
+				.then((data) => {
+					setRecipes(data.hits);
+					console.log(data.hits);
+				});
+		}
+		
 	}, [query]);
 
 	const updateSearch = (e) => {
@@ -54,7 +67,7 @@ const Home = () => {
 			</form>
 
 			<p className="fw-bold my-2 section-title">
-				Recommendations
+				{query ? `Results for ${query}` : 'Recommendations'}
 			</p>
 			<div className="d-flex justify-content-between flex-wrap">
 				{recipes === undefined || Object.keys(recipes) === 0 ? 

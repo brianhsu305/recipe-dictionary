@@ -6,7 +6,7 @@ const Recipe = (props) => {
         return (encodeURIComponent(uri))
     }
     return (
-        <div className="recipe m-1">
+        <div className="recipe">
             <Link className="text-decoration-none" to={`/recipe/${convertUri(props.dish.uri)}`}>
                 {/* <i className="fas fa-arrow-right text-white"></i> */}
                 <img className="" src={props.dish.image} alt="dish"/>
