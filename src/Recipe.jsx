@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Recipe = (props) => {
 	const convertUri = (uri) => {
@@ -6,7 +7,7 @@ const Recipe = (props) => {
 	};
 	return (
 		<div className='recipe'>
-			<a href={`/recipe/${convertUri(props.dish.uri)}`}>
+			<Link to={`/recipe/${convertUri(props.dish.uri)}`}>
 				<img src={props.dish.image} alt='dish' />
 				<div className='content'>
 					<p className='recipelabel'>{props.dish.label}</p>
@@ -16,7 +17,7 @@ const Recipe = (props) => {
 					</span></p>
 					<p>{props.dish.calories.toFixed(0)} cal</p>
 				</div>
-			</a>
+			</Link>
 		</div>
 	);
 };

@@ -19,7 +19,7 @@ const RecipeDetails = (props) => {
 	return (
 		<div className='recipedetails container'>
 			{result === undefined || Object.keys(result).length === 0 ? (
-				<div>Loading ...</div>
+				<div>Please refresh the page after 1 minute (due to using free version API)</div>
 			) : (
 				<div>
 					<section className='main'>
