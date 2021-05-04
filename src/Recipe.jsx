@@ -1,23 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
 
 const Recipe = (props) => {
-    const convertUri = (uri) => {
-        return (encodeURIComponent(uri))
-    }
-    return (
-        <div className="recipe">
-            <Link className="text-decoration-none" to={`/recipe/${convertUri(props.dish.uri)}`}>
-                {/* <i className="fas fa-arrow-right text-white"></i> */}
-                <img className="" src={props.dish.image} alt="dish"/>
-                <div className="content ">
-                    <p className="recipe-label text-dark">{props.dish.label}</p>
-                    <p style={{color:'#747474'}}>{props.dish.calories.toFixed(0)} cal</p>
-                </div>
-            </Link>
-        </div>
-    )
-
-}
+	const convertUri = (uri) => {
+		return encodeURIComponent(uri);
+	};
+	return (
+		<div className='recipe'>
+			<a href={`/recipe/${convertUri(props.dish.uri)}`}>
+				<img src={props.dish.image} alt='dish' />
+				<div className='content'>
+					<p className='recipelabel'>{props.dish.label}</p>
+					<p className='recipediet'>Diet label: {' '}
+					<span>
+						{props.dish.dietLabels[0] ? props.dish.dietLabels[0] : "none"}
+					</span></p>
+					<p>{props.dish.calories.toFixed(0)} cal</p>
+				</div>
+			</a>
+		</div>
+	);
+};
 
 export default Recipe;
