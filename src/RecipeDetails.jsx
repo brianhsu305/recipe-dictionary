@@ -19,11 +19,18 @@ const RecipeDetails = (props) => {
 	return (
 		<div className='recipedetails container'>
 			{result === undefined || Object.keys(result).length === 0 ? (
-				<div>Please refresh the page after 1 minute (due to using free version API)</div>
+				<div>Refresh the page after 1 minute</div>
 			) : (
 				<div>
-					<section className='main'>
-						<h2>{result.label}</h2>
+					<section className='main' id="main">
+						<div className="title">
+							<h2>{result.label}</h2>
+							<Link to="/">
+								<i className="fas fa-arrow-left"></i>
+								<p>Go Back</p>
+							</Link>
+						</div>
+						
 						<div className="content">
 							<img src={result.image} alt='dish' />
 							<div className='healthlabels'>
@@ -60,6 +67,11 @@ const RecipeDetails = (props) => {
 						</p>
 						<a href={result.url}>Check original recipe</a>
 					</section>
+					<div className="footer">
+						<a href="#main">
+							<p>Back to top</p>
+						</a>
+					</div>
 				</div>
 			)}
 		</div>
