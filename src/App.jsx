@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/App.css";
+import "./css/style.css";
 import Header from "./Header";
 import Home from "./Home";
 import RecipeDetails from './RecipeDetails';

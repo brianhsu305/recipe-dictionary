@@ -17,27 +17,19 @@ body {
 
 .home form {
   margin-top: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  padding: .5em;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding: 0.5em;
+  justify-content: space-between;
   border-bottom: 2px solid #747474;
 }
-
 .home form button,
 .home form input {
   background: none;
   border: none;
 }
-
 .home form input {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  font-family: 'Poppins', sans-serif;
+  flex: 1;
+  font-family: "Poppins", sans-serif;
 }
 
 .section-title {
@@ -47,41 +39,31 @@ body {
 }
 
 .recipes {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .recipe {
   margin: 1em;
-  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
-  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  font-family: "Poppins", sans-serif;
   width: 100%;
 }
-
 .recipe a {
   text-decoration: none;
 }
-
 .recipe a .recipelabel {
   color: black;
   font-weight: bold;
 }
-
 .recipe a .content {
   padding: 1em;
 }
-
 .recipe a p, .recipe a span {
   color: #747474;
   margin: 0;
 }
-
 .recipe a img {
   width: 100%;
 }
@@ -89,97 +71,66 @@ body {
 .recipedetails section {
   margin: 1em 0;
 }
-
 .recipedetails section.main .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .recipedetails section.main .title a {
   text-decoration: none;
   color: #ff9422;
 }
-
 .recipedetails section.main .title a p {
   margin: 0 1em;
   display: none;
 }
-
 .recipedetails section.main .title a i {
   font-size: 1.2rem;
 }
-
 .recipedetails section.main .title a:hover {
   color: #2e2e2e;
 }
-
 .recipedetails section.main img {
   max-width: 100%;
 }
-
 .recipedetails section.main .healthlabels {
   margin-top: 1em;
   border: 2px solid #747474;
   padding: 1em;
   border-radius: 10px;
 }
-
 .recipedetails section.main .healthlabels p {
   color: #747474;
 }
-
 .recipedetails section.ingredients .servings {
   color: #747474;
 }
-
 .recipedetails section.nutrients {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 .recipedetails section.nutrients h5 {
   width: 100%;
   text-align: start;
 }
-
 .recipedetails section.nutrients span {
   color: #747474;
 }
-
 .recipedetails section.nutrients a {
   text-decoration: none;
   background-color: #ff9422;
-  padding: .5em;
+  padding: 0.5em;
   color: white;
   border-radius: 2em;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 2em;
 }
-
 .recipedetails section.nutrients a:hover {
   color: #2e2e2e;
 }
-
 .recipedetails .divider {
   height: 2px;
   width: 100%;
@@ -190,16 +141,13 @@ body {
 .footer {
   height: 10vh;
   width: 100%;
-  display: -ms-grid;
   display: grid;
   place-content: center;
 }
-
 .footer a {
   text-decoration: none;
   color: #ff9422;
 }
-
 .footer a:hover {
   color: #2e2e2e;
 }
@@ -215,33 +163,25 @@ body {
     display: unset;
   }
   .recipedetails .content {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     padding: 1em 0;
   }
   .recipedetails .content .healthlabels {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin: 1em;
     width: 30rem;
   }
 }
-
 @media only screen and (min-width: 1024px) {
   .recipe {
-    margin: 1em .5em;
+    margin: 1em 0.5em;
     width: 23%;
   }
 }
-
 @media only screen and (min-width: 1440px) {
   .recipe {
     width: 18%;
   }
-}
-/*# sourceMappingURL=App.css.map */
+}/*# sourceMappingURL=style.css.map */
