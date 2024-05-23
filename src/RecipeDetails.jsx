@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
-const RecipeDetails = (props) => {
+const RecipeDetails = () => {
 	const APP_ID = 'c2f2cb27';
 	const APP_KEY = import.meta.env.VITE_KEY;
 
@@ -21,48 +21,58 @@ const RecipeDetails = (props) => {
 	}, []);
 
 	return (
-		<div className=''>
+		<div className='min-h-screen flex justify-center items-center py-10'>
 			{result === undefined || Object.keys(result).length === 0 ? (
 				<div>Refresh the page after 1 minute</div>
 			) : (
 				<div>
-					<section className='' id='main'>
-						<div className='mb-5'>
-							{/* <Link to='/'> */}
-								<button className='rounded bg-red-400 p-2' onClick={() => navigate(-1)}>Back</button>
-							{/* </Link> */}
-							<h2 className='text-4xl font-bold mt-5'>{result.label}</h2>
-						</div>
+					<section id='main'>
+						<button className='rounded bg-red-400 p-2 hover:bg-red-800' onClick={() => navigate(-1)}>
+							Back
+						</button>
 
-						<div className='border-100'>
+						<div>
+							<h2 className='text-4xl font-bold my-5 title-font'>{result.label}</h2>
 							<img src={result.image} alt='dish' />
-							<div className=''>
+							<div>
 								<h5 className='font-bold text-2xl my-3'>Health Labels</h5>
 								<p className='flex flex-wrap'>
 									{result.healthLabels.map((item, i) => (
-										<span key={i} className='rounded bg-emerald-300 m-2 p-2'>{item}</span>
+										<span key={i} className='rounded bg-emerald-300 m-1 p-2'>
+											{item}
+										</span>
 									))}
 								</p>
 							</div>
 						</div>
 					</section>
-					<section className='ingredients'>
+					<section>
 						<h5 className='font-bold text-2xl my-3'>Ingredients for {result.yield} serving&#40;s&#41;</h5>
 						{result.ingredientLines.map((item, i) => (
 							<p key={i}>{item}</p>
 						))}
 					</section>
-					<section className='nutrients'>
+					<section>
 						<h5 className='font-bold text-2xl my-3'>Nutrients &#40;per serving&#41;</h5>
-						<p className='font-bold'>{(result.calories / result.yield).toFixed(0)} calories</p>
-						<div className='flex flex-wrap'>
+						<div className='flex flex-col bg-white p-5'>
+							<p className='font-bold text-2xl'>{(result.calories / result.yield).toFixed(0)} calories</p>
+
 							{Object.values(result.totalNutrients).map((item, i) => (
-								<span key={i} className='rounded bg-emerald-300 m-2 p-2'>
-									{item.label} {(item.quantity / result.yield).toFixed(0)}
-									{item.unit}
-								</span>
+								<p key={i} className='rounded flex justify-between'>
+									<span className='font-bold'>{item.label} </span>
+									<span className=''>
+										{' '}
+										{(item.quantity / result.yield).toFixed(0)} {item.unit}
+									</span>
+								</p>
 							))}
 						</div>
+					</section>
+					<section>
+						<h5 className='font-bold text-2xl my-3'>Recipe Instruction</h5>
+						<Link to={result.url} className='py-4  text-blue-600 font-bold uppercase hover:underline'>
+							Check recipe instruction here
+						</Link>
 					</section>
 				</div>
 			)}

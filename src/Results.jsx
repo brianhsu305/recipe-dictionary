@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import SearchBar from './SearchBar';
 import Recipe from './Recipe';
 import { useParams, useLocation, Link } from 'react-router-dom';
@@ -27,17 +26,18 @@ const Results = (props) => {
 		// </div>
 
 		<div>
-			<div className='flex items-center gap-2'>
+			<div className='flex gap-2 sticky top-0 pt-10 bg-emerald-100'>
 				<SearchBar />
 				<Link to='/'>
-					<button className='bg-red-400 rounded p-2'>Back</button>
+					<button className='bg-red-400 rounded p-2 hover:bg-red-800'>Back</button>
 				</Link>
 			</div>
 
-			<h1 className='mt-5'>
+			<h1 className='my-5'>
 				Results for <span className='font-bold'>{query ? `${` ` + query}` : ''}</span>
 			</h1>
-			<div className='md:grid md:grid-rows-3 md:grid-flow-row md:gap-4'>
+
+			<div className='grid gap-3 md:grid-cols-2 md:grid-flow-row md:gap-5 lg:grid-cols-4'>
 				{recipes.map((dish) => (
 					<Recipe key={dish.recipe.url} dish={dish.recipe} />
 				))}
