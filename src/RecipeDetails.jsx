@@ -26,26 +26,14 @@ const RecipeDetails = () => {
 				<div>Refresh the page after 1 minute</div>
 			) : (
 				<div>
-					<section id='main'>
-						<button className='rounded bg-red-400 p-2 hover:bg-red-800' onClick={() => navigate(-1)}>
-							Back
-						</button>
-
-						<div>
-							<h2 className='text-4xl font-bold my-5 title-font'>{result.label}</h2>
-							<img src={result.image} alt='dish' />
-							<div>
-								<h5 className='font-bold text-2xl my-3'>Health Labels</h5>
-								<p className='flex flex-wrap'>
-									{result.healthLabels.map((item, i) => (
-										<span key={i} className='rounded bg-emerald-300 m-1 p-2'>
-											{item}
-										</span>
-									))}
-								</p>
-							</div>
-						</div>
+					<button className='rounded bg-red-400 p-2 font-bold hover:bg-red-800' onClick={() => navigate(-1)}>
+						Back
+					</button>
+					<section>
+						<h2 className='text-4xl font-bold my-5 title-font'>{result.label}</h2>
+						<img src={result.image} alt='dish' />
 					</section>
+					
 					<section>
 						<h5 className='font-bold text-2xl my-3'>Ingredients for {result.yield} serving&#40;s&#41;</h5>
 						{result.ingredientLines.map((item, i) => (
@@ -73,6 +61,16 @@ const RecipeDetails = () => {
 						<Link to={result.url} className='py-4  text-blue-600 font-bold uppercase hover:underline'>
 							Check recipe instruction here
 						</Link>
+					</section>
+					<section>
+						<h5 className='font-bold text-2xl my-3'>Health Labels</h5>
+						<p className='flex flex-wrap'>
+							{result.healthLabels.map((item, i) => (
+								<span key={i} className='rounded bg-emerald-300 m-1 p-2'>
+									{item}
+								</span>
+							))}
+						</p>
 					</section>
 				</div>
 			)}

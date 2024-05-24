@@ -29,7 +29,7 @@ const Results = (props) => {
 			<div className='flex gap-2 sticky top-0 pt-10 bg-emerald-100'>
 				<SearchBar />
 				<Link to='/'>
-					<button className='bg-red-400 rounded p-2 hover:bg-red-800'>Back</button>
+					<button className='bg-red-400 rounded p-2 font-bold hover:bg-red-800'>Back</button>
 				</Link>
 			</div>
 

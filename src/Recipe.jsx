@@ -15,7 +15,7 @@ const Recipe = (props) => {
 			<Link
 				to={`/recipe/${myEncodedUri}`} className='mr-2 p-2 bg-emerald-300 rounded hover:bg-emerald-800'
 			>
-				<button className='md:w-full'>More</button>
+				<button className='font-bold'>More</button>
 			</Link>
 		</div>
 	);
